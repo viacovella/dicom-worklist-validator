@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  validator-sim:
+    build: ./writer
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./worklists:/shared_data
+
+
+
+  orthanc:
+    # Using the official Orthanc Docker image
+    image: orthancteam/orthanc
+    command: /etc/orthanc/orthanc.json --verbose
+    ports:
+      - "4242:4242"
+      - "8042:8042"
+    volumes:
+      - ./worklists:/shared_data
+      - ./orthanc.json:/etc/orthanc/orthanc.json:ro
+      
