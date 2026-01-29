@@ -30,8 +30,10 @@ curl -X POST http://localhost:8000/create-worklist \
      -d '{"patient_name":"Fake^Name","patient_id":"MR12345", "accession_number":"ACC999", "patient_sex":"M", "scheduled_ae_title":"MRSCANNER"}
 ```
 
-# Testing
+## Testing
 * you can use a one-line docker instruction with dcm4che docker image
 ```Bash
 docker run --rm dcm4che/dcm4che-tools:5.32.0 findscu -c DOCKER_MWL@host.docker.internal:4242 -M -m ScheduledStationAETitle=MRSCANNER -r PatientName
 ```
+## AI Usage Disclaimer
+This project was developed using an AI-assisted workflow. Large Language Models (LLMs) were utilized as a pair programming partner to accelerate code scaffolding, debug configuration files (Orthanc/Docker), and refine the DICOM implementation logic. All AI-generated code has been reviewed, tested, and validated by the author to ensure accuracy and adherence to standards.
